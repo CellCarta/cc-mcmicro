@@ -6,11 +6,21 @@ MCMICRO is an end-to-end processing pipeline for multiplexed whole slide imaging
 
 The pipeline is described in [Nature Methods](https://www.nature.com/articles/s41592-021-01308-y). Please see [mcmicro.org](https://mcmicro.org/) for documentation, tutorials, benchmark datasets and more.
 
-## Quick start
+## Quick start at CellCarta
 
-1. [Install](http://mcmicro.org/instructions/nextflow/installation.html) nextflow and Docker. Verify installation with `nextflow run hello` and `docker run hello-world`
-1. [Download](http://mcmicro.org/datasets/) exemplar data: `nextflow run labsyspharm/mcmicro/exemplar.nf --name exemplar-001`
-1. [Run](https://mcmicro.org/instructions/nextflow/) mcmicro on the exemplar: `nextflow run labsyspharm/mcmicro --in exemplar-001`
+1. Go to the EC2 orchestrator of your choice, acceptance or production
+2. Convert your data into the following directory structure:
+- root directory: the `markers.csv`, `params.yml` file and `registration` directory.
+- registration directory: `.tiff` file.
+3. run using
+  ```shell
+
+  nextflow run CellCarta/cc-mcmicro -profile aws -bucket-dir s3://hgx-seq-work-acceptance20201223104707692700000001/mcmicro --in s3://hgx-seq-input-acceptance20201223104845345800000002/Comet/Data/test-mcmicro/ --out s3://hgx-seq-results-acceptance20201223105151986000000001/Comet/test
+  ```
+
+   
+
+
 
 ## Funding
 
