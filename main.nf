@@ -24,8 +24,12 @@ mcp = Opts.parseParams(
     "$projectDir/config/defaults.yml"
 )
 
+mcp.view()
+
 // Separate out workflow parameters (wfp) to simplify code
 wfp = mcp.workflow
+
+wfp.view()
 
 // Identify relevant precomputed intermediates
 // The actual paths to intermediate files are given by
