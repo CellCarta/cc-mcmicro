@@ -87,16 +87,16 @@ staging_in = stagingDirs
 // the normal way that paths are passed to channels which handles this escaping
 // automatically.
 
-// rawFiles = findFiles('raw', "**${formatPattern}",
-// 		     {error "No images found in ${params.in}/raw"})
-// raw = rawFiles
-//     .map{ tuple(
-//        Util.getSampleName(it, file("${params.in}/raw")),
-//        formatType == "single" ? it : it.parent, 
-//        it
-//    )}
-//    .map{ sampleName, toStage, relPath -> 
-//        tuple(sampleName, toStage, toStage.parent.relativize(relPath).toString()) }
+rawFiles = findFiles('raw', "**${formatPattern}",
+		     {error "No images found in ${params.in}/raw"})
+raw = rawFiles
+    .map{ tuple(
+       Util.getSampleName(it, file("${params.in}/raw")),
+       formatType == "single" ? it : it.parent, 
+       it
+   )}
+   .map{ sampleName, toStage, relPath -> 
+       tuple(sampleName, toStage, toStage.parent.relativize(relPath).toString()) }
 
 // Find precomputed intermediates
 pre_dfp   = findFiles0('illumination', "**-dfp.tif")
