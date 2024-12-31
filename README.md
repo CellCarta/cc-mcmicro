@@ -15,7 +15,7 @@ The pipeline is described in [Nature Methods](https://www.nature.com/articles/s4
 3. run using
   ```shell
 
-  nextflow run CellCarta/cc-mcmicro -profile aws -bucket-dir s3://hgx-seq-work-acceptance20201223104707692700000001/mcmicro --in s3://hgx-seq-input-acceptance20201223104845345800000002/Comet/Data/test-mcmicro/ --out s3://hgx-seq-results-acceptance20201223105151986000000001/Comet/test
+  nextflow run CellCarta/cc-mcmicro -profile AWS -bucket-dir s3://hgx-seq-work-acceptance20201223104707692700000001/mcmicro --in s3://hgx-seq-input-acceptance20201223104845345800000002/Comet/Data/test-mcmicro/ --out s3://hgx-seq-results-acceptance20201223105151986000000001/Comet/test
   ```
 
    
