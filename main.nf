@@ -24,12 +24,16 @@ mcp = Opts.parseParams(
     "$projectDir/config/defaults.yml"
 )
 
-mcp.view()
+// Print full mcp map
+println("MCMICRO parameters:")
+println(mcp.dump())
 
 // Separate out workflow parameters (wfp) to simplify code
 wfp = mcp.workflow
 
-wfp.view()
+// Print workflow parameters
+println("\nWorkflow parameters:")
+println(wfp.dump())
 
 // Identify relevant precomputed intermediates
 // The actual paths to intermediate files are given by
